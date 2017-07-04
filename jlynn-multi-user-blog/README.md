@@ -6,6 +6,11 @@ What it does:
 
 How to use it:
 - You need to have an internet connection and python 2.7 installed on your machine. Further information and troubleshooting can be found here: https://www.python.org/downloads/
+- Download this git repository, navigate to this directory in the command line and run: dev_appserver.py app.yaml
 
-- Deployed to https://basic-blog-169306.appspot.com
+  Or visit at:
+- Deployed to <a href="https://basic-blog-169306.appspot.com">Multi User Blog</a>
+
+Author:
+Joshua Lynn
 
