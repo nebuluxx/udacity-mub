@@ -1,0 +1,50 @@
+<div class="post">
+    <div class="post-heading">
+        <div class="post-title">
+            {% if user %}
+                <a class="post-title" href="{{'/blog/comments/%s' % p.key.id()}}">{{p.subject}} </a>
+            {% else %}
+                {{p.subject}}
+            {% endif %}
+            <span class="post-username">by {{p.name}}</span>
+        </div>
+        <div class="post-date">
+          {{p.created.strftime("%b %d, %Y")}}
+        </div>
+    </div>
+</div>
+
+<div class="post-content">
+    {{p._render_text | safe}}
+</div>
+    
+<div class="interact">
+    <div class="like">
+        <div class="like_button">
+            {% if user and user.key.id() != p.author %}
+              <form method="post">
+                <button name="like" type="submit" value="{{p.key.id()}}">Like 
+                </button>
+              </form>
+            {% endif %}
+        </div>
+        <div class="like_count">
+            {% if p.like_count != 0 %}
+                Likes:{{p.like_count}}
+            {% endif %}
+        </div>
+    </div>
+    <div class="comment">
+        {% if user %}
+            <a class="post-comments" href="{{'/blog/comments/%s' % p.key.id()}}">Comment</a>
+        {% endif %}
+    </div>
+</div>
+    
+<div class="post-e-d">
+    {% if user and p.author == user.key.id() %}
+    <a class="post-edit" href="{{'/blog/editpost/%s' % p.key.id()}}">edit</a>
+    <span class="post-edit"> / </span>
+    <a class="post-delete" href="{{'/blog/deletepost/%s' % p.key.id()}}">delete</a>
+    {% endif %}
+</div>

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <br>
+    <h2> Are you sure you want to delete your thought?</h2>
+    <br>
+    {{post.render(user) | safe}}
+    <br>
+    <br>
+    <div class="final-delete">
+        <form method="post">
+            <button type="submit" name="delete" value="delete">
+                Delete
+            </button>
+        </form>
+        <a href="/blog"> Nope</a>
+    </div>
+{% endblock %}

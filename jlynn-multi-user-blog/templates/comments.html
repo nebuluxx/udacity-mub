@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="post-heading">
+    <div class="post-title">
+        {{post.subject | safe}}
+    </div>
+    <div class="post-username">
+    by {{post.name}}
+    </div>
+    <div class="post-date">
+          {{post.created.strftime("%b %d, %Y")}}
+    </div>
+    <br>
+    <div class="post-content">
+        {{post.content}}
+    </div>
+    <br>
+    Likes: {{post.like_count}}
+</div>
+<br>
+<form class="comments-box" method="post">
+    <input class="com_box" type="text" name="comment" placeholder="Write a comment">
+    <input class="com_send" type="submit">
+</form>
+<div class="error">
+{{error}}
+</div>
+<br><br>
+{% if comments %}
+    <div class="user_comment">
+    {% for c in comments %}
+        <div class="comment_author">
+            {{c.name}}
+        </div>
+        <br>
+        <div class="comment_content">
+        {{c.comment | safe}}
+        </div>
+        {% if user and c.user == user.key %}
+        <div class="post-e-d">
+            <a class="post-edit" href="{{'/blog/editcom/%s' % c.key.id()}}">edit</a>
+            <span class="post-edit"> / </span>
+            <a class="post-delete" href="{{'/blog/deletecom/%s' % c.key.id()}}">delete</a>
+        </div>
+        {% endif %}
+    </div>
+    <br>
+    <br>
+    <br>
+    {% endfor %}
+{% endif%}
+
+{% endblock %}
