@@ -9,7 +9,7 @@ How to use it:
 - Download this git repository, navigate to this directory in the command line and run: dev_appserver.py app.yaml
 
   Or visit at:
-- Deployed to <a href="https://basic-blog-169306.appspot.com">Multi User Blog</a>
+- Deployed to <a href="https://basic-blog-169306.appspot.com" target="_blank">Multi User Blog</a>
 
 Author:
 Joshua Lynn
