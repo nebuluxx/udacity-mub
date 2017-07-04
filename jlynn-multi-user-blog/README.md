@@ -6,7 +6,7 @@ What it does:
 
 How to use it:
 - You need to have an internet connection and python 2.7 installed on your machine. Further information and troubleshooting can be found here: https://www.python.org/downloads/
-- Download this git repository, navigate to this directory in the command line and run: dev_appserver.py app.yaml
+- Download this git repository https://github.com/nebuluxx/udacity-mub.git, navigate to this directory in the command line and run: dev_appserver.py app.yaml
 
   Or visit at:
 - Deployed to <a href="https://basic-blog-169306.appspot.com" target="_blank">Multi User Blog</a>
